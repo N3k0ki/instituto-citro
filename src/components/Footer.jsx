@@ -6,9 +6,6 @@ function Footer() {
   const [activeLink, setActiveLink] = useState('');
 
   const footerLinks = [
-    { name: 'Missão', href: '/missao' },
-    { name: 'Visão', href: '/visao' },
-    { name: 'Valores', href: '/valores' },
     { name: 'Território', href: '/territorio' },
     { name: 'Atuação', href: '/atuacao' },
     { name: 'Programas', href: '/programas' },

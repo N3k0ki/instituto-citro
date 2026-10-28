@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import logoInstituto from '../assets/logo_instituto.svg'
 import "../index.css"
 
@@ -16,6 +16,15 @@ function NavBar() {
     { name: 'Patrocinadores', href: '/patrocinadores' },
   ]
 
+  // Detecta automaticamente a página ativa com base no URL atual do browser
+  useEffect(() => {
+    const currentPath = window.location.pathname
+    const currentItem = navItems.find(item => item.href === currentPath)
+    if (currentItem) {
+      setActiveLink(currentItem.name)
+    }
+  }, [])
+
   return (
     <header className="w-full bg-[#f8f9fa] border-b border-slate-200/80 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,13 +41,12 @@ function NavBar() {
               alt="Instituto Citrô"
               className="w-10 h-10 object-contain transition-transform group-hover:scale-105"
             />
-
             <span className="text-2xl font-black tracking-wider text-[#C85227] select-none">
               CITRÔ
             </span>
           </a>
 
-          {/* MENU DESKTOP */}
+          {/* MENU DESKTOP - Animação minimalista original restaurada */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navItems.map((item) => (
               <a
@@ -51,11 +59,12 @@ function NavBar() {
                   font-semibold
                   transition-colors
                   duration-200
+                  py-2
 
                   after:content-['']
                   after:absolute
                   after:left-0
-                  after:-bottom-2
+                  after:bottom-0
                   after:w-full
                   after:h-[2px]
                   after:bg-[#C85227]
@@ -143,7 +152,6 @@ function NavBar() {
                     text-base
                     font-medium
                     transition-colors
-
                     ${
                       activeLink === item.name
                         ? 'bg-[#C85227]/10 text-[#C85227]'

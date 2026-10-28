@@ -71,9 +71,6 @@ function EssenceSection() {
                 {card.icon}
                 <h3 className="text-xl md:text-2xl font-bold text-[#5C3D2E] mb-3 md:mb-4">{card.title}</h3>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6 md:mb-8 flex-grow">{card.desc}</p>
-                <a href={`#${card.title.toLowerCase()}`} className="inline-flex items-center gap-2 text-[#C85227] font-bold hover:gap-3 transition-all text-sm md:text-base mt-auto">
-                  Conhecer <span>→</span>
-                </a>
               </div>
             </motion.div>
           ))}

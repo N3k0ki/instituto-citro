@@ -4,7 +4,7 @@ import { BookOpen, HeartHandshake, BookType, ArrowRight } from 'lucide-react';
 // Substitui pelo caminho correto da imagem real
 import participateImage from '../assets/citro-tecnologia.jpg'; 
 
-function ParticipateSection() {
+function FacaParte() {
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
@@ -40,23 +40,23 @@ function ParticipateSection() {
               Aprenda uma nova linguagem, ensine o que você domina ou contribua com sua experiência em comunicação, audiovisual e tecnologia.
             </motion.p>
 
-            {/* Contentor dos Cartões (Grid de 3 colunas) */}
+            {/* Contentor dos Cartões (Grid uniforme de 3 colunas em sm, 2 em mobile com span correto) */}
             <motion.div variants={fadeUpVariant} className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 mb-10">
               
               {/* Cartão 1 - Como aluno */}
-              <div className="bg-[#e99a12] rounded-xl p-4 md:p-5 flex flex-col justify-between aspect-square md:aspect-auto md:h-36 transition-transform hover:-translate-y-1">
+              <div className="bg-[#e99a12] rounded-xl p-4 md:p-5 flex flex-col justify-between aspect-square sm:aspect-auto sm:h-36 transition-transform hover:-translate-y-1">
                 <BookOpen className="w-6 h-6 md:w-8 md:h-8 text-[#5C3D2E] mb-4" strokeWidth={1.5} />
                 <span className="text-[#5C3D2E] font-bold text-sm md:text-base leading-tight">Como aluno</span>
               </div>
 
               {/* Cartão 2 - Como patrocinador */}
-              <div className="bg-[#8EAFBB] rounded-xl p-4 md:p-5 flex flex-col justify-between aspect-square md:aspect-auto md:h-36 transition-transform hover:-translate-y-1">
+              <div className="bg-[#8EAFBB] rounded-xl p-4 md:p-5 flex flex-col justify-between aspect-square sm:aspect-auto sm:h-36 transition-transform hover:-translate-y-1">
                 <HeartHandshake className="w-6 h-6 md:w-8 md:h-8 text-[#5C3D2E] mb-4" strokeWidth={1.5} />
                 <span className="text-[#5C3D2E] font-bold text-sm md:text-base leading-tight">Como patrocinador</span>
               </div>
 
-              {/* Cartão 3 - Como educador */}
-              <div className="bg-[#78866B] rounded-xl p-4 md:p-5 flex flex-col justify-between aspect-square md:aspect-auto md:h-36 transition-transform hover:-translate-y-1 col-span-2 sm:col-span-1">
+              {/* Cartão 3 - Como educador (Corrigido col-span para ficar igual aos outros) */}
+              <div className="bg-[#78866B] rounded-xl p-4 md:p-5 flex flex-col justify-between aspect-square sm:aspect-auto sm:h-36 transition-transform hover:-translate-y-1 col-span-1">
                 <BookType className="w-6 h-6 md:w-8 md:h-8 text-[#1f2937] mb-4" strokeWidth={1.5} />
                 <span className="text-[#1f2937] font-bold text-sm md:text-base leading-tight">Como educador</span>
               </div>
@@ -96,4 +96,4 @@ function ParticipateSection() {
   );
 }
 
-export default ParticipateSection;
+export default FacaParte;

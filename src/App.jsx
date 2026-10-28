@@ -9,6 +9,8 @@ import EssenceSection from './sections/essenceSection.jsx';
 import QuoteSection from './sections/quoteSection.jsx';
 import ParticipateSection from './sections/participateSection.jsx';
 import Atuacao from './pages/atuacao.jsx';
+import Citro from './pages/citro.jsx';
+import FacaParte from './pages/participacao.jsx';
 
 import Territorio from './pages/territorio.jsx';
 import './index.css';
@@ -35,6 +37,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/territorio" element={<Territorio />} />
             <Route path="/atuacao" element={<Atuacao />} />
+            <Route path="/citro" element={<Citro />} />
+            <Route path="/transparencia" element={<div>Transparência</div>} />
+            <Route path="/faca-parte" element={<FacaParte />} />
+            <Route path="/patrocinadores" element={<div>Patrocinadores</div>} />
           </Routes>
         </div>
       </div>
