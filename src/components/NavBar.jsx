@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
-import logoInstituto from '../assets/logo_instituto.svg'
 import "../index.css"
 
 function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('Início')
 
+  // Lista de navegação oficial
   const navItems = [
     { name: 'Início', href: '/' },
     { name: 'Território', href: '/territorio' },
     { name: 'Atuação', href: '/atuacao' },
     { name: 'CITRÔ', href: '/citro' },
-    { name: 'Transparência', href: '/transparencia' },
+    // { name: 'Transparência', href: '/transparencia' },
     { name: 'Faça Parte', href: '/faca-parte' },
     { name: 'Patrocinadores', href: '/patrocinadores' },
   ]
@@ -19,9 +19,13 @@ function NavBar() {
   // Detecta automaticamente a página ativa com base no URL atual do browser
   useEffect(() => {
     const currentPath = window.location.pathname
-    const currentItem = navItems.find(item => item.href === currentPath)
-    if (currentItem) {
-      setActiveLink(currentItem.name)
+    if (currentPath === '/contato') {
+      setActiveLink('Contato')
+    } else {
+      const currentItem = navItems.find(item => item.href === currentPath)
+      if (currentItem) {
+        setActiveLink(currentItem.name)
+      }
     }
   }, [])
 
@@ -30,14 +34,14 @@ function NavBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
-          {/* LOGO */}
+          {/* LOGO - Caminho corrigido para a raiz / logo_instituto.svg */}
           <a
             href="/"
             onClick={() => setActiveLink('Início')}
             className="flex items-center gap-3 group"
           >
             <img
-              src={logoInstituto}
+              src="/logo_instituto.svg"
               alt="Instituto Citrô"
               className="w-10 h-10 object-contain transition-transform group-hover:scale-105"
             />
@@ -46,7 +50,7 @@ function NavBar() {
             </span>
           </a>
 
-          {/* MENU DESKTOP - Animação minimalista original restaurada */}
+          {/* MENU DESKTOP */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navItems.map((item) => (
               <a
@@ -89,15 +93,12 @@ function NavBar() {
               </a>
             ))}
 
-            {/* BOTÃO CONTATO DESTACADO */}
+            {/* ÚNICO BOTÃO DE CONTATO DESTACADO À DIREITA */}
             <a
-              href="#contato"
+              href="/contato"
               onClick={() => setActiveLink('Contato')}
-              className="
+              className={`
                 ml-2
-                bg-[#C85227]
-                hover:bg-[#b0431f]
-                text-white
                 font-medium
                 px-6
                 py-2.5
@@ -107,7 +108,12 @@ function NavBar() {
                 duration-200
                 hover:shadow
                 hover:-translate-y-0.5
-              "
+                ${
+                  activeLink === 'Contato'
+                    ? 'bg-[#b0431f] text-white'
+                    : 'bg-[#C85227] hover:bg-[#b0431f] text-white'
+                }
+              `}
             >
               Contato
             </a>
@@ -163,25 +169,27 @@ function NavBar() {
                 </a>
               ))}
 
-              {/* BOTÃO CONTATO NO MOBILE */}
+              {/* ÚNICO BOTÃO DE CONTATO NO MOBILE */}
               <a
-                href="#contato"
+                href="/contato"
                 onClick={() => {
                   setActiveLink('Contato')
                   setMobileMenuOpen(false)
                 }}
-                className="
+                className={`
                   mt-2
                   text-center
-                  bg-[#C85227]
-                  hover:bg-[#b0431f]
-                  text-white
                   font-medium
                   px-4
                   py-3
                   rounded-xl
                   transition-colors
-                "
+                  ${
+                    activeLink === 'Contato'
+                      ? 'bg-[#b0431f] text-white'
+                      : 'bg-[#C85227] hover:bg-[#b0431f] text-white'
+                  }
+                `}
               >
                 Contato
               </a>

@@ -41,7 +41,7 @@ function Territorio() {
         style={{ backgroundImage: `url(${territorioBg})` }}
       >
         {/* Overlay em gradiente escuro e suave do roxo/marrom para garantir contraste com o texto branco */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d0d0d]/90 via-[#0d0d0d]/75 to-transparent md:w-3/4 lg:w-2/3"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#b37cbd]/90 via-[#0d0d0d]/75 to-transparent md:w-3/4 lg:w-2/3"></div>
         <div className="absolute inset-0 bg-black/20"></div>
       </motion.div>
 
