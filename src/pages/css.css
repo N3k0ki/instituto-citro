@@ -1,0 +1,737 @@
+:root {
+    --kitsune-black: #080808;
+    --kitsune-surface: #202020;
+    --kitsune-orange: #ff8119;
+    --kitsune-white: #ffffff;
+}
+
+
+
+/* CABEÇALHO PRETO */
+
+.js-head-main,
+.js-head-main .head-row {
+    background-color: var(--kitsune-black) !important;
+    color: var(--kitsune-white) !important;
+}
+
+
+
+/* LINHA PRINCIPAL: LOGO E UTILITÁRIOS */
+
+.js-head-main .head-row {
+    display: flex !important;
+    flex-direction: row !important;
+
+    flex-wrap: nowrap !important;
+
+    align-items: center !important;
+
+    justify-content: space-between !important;
+
+    gap: 18px;
+
+    padding: 24px 5% !important;
+
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+}
+
+
+
+/* LOGO À ESQUERDA */
+
+.js-head-main .logo-container {
+
+    position: static !important;
+
+    left: auto !important;
+
+    right: auto !important;
+
+    transform: none !important;
+
+
+
+    display: flex !important;
+
+    flex: 0 0 auto !important;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+
+
+    width: auto !important;
+
+    margin: 0 !important;
+
+    order: 0;
+
+}
+
+
+
+.js-head-main .logo-img {
+
+    display: block;
+
+    width: auto !important;
+
+    max-width: 100%;
+
+    max-height: 100px;
+
+    object-fit: contain;
+
+}
+
+
+
+/* ESCONDE O BOTÃO MENU NO DESKTOP */
+
+@media (min-width: 768px) {
+
+    .js-head-main .menu-container {
+
+        display: none !important;
+
+    }
+
+}
+
+
+
+/* GRUPO DE BUSCA, PERFIL E CARRINHO */
+
+.js-head-main .utilities-group {
+
+    display: flex !important;
+
+    flex: 1 1 auto !important;
+
+    flex-direction: row !important;
+
+    flex-wrap: nowrap !important;
+
+    align-items: center !important;
+
+    justify-content: flex-end !important;
+
+
+
+    width: auto !important;
+
+    min-width: 0;
+
+    gap: 22px;
+
+    margin: 0 !important;
+
+}
+
+
+
+/* BARRA DE PESQUISA */
+
+.js-head-main .search-container {
+
+    display: block !important;
+
+    position: relative;
+
+    flex: 1 1 650px !important;
+
+    width: auto !important;
+
+    max-width: 750px;
+
+    min-width: 180px;
+
+    margin: 0 !important;
+
+}
+
+
+
+.js-head-main .search-form,
+
+.js-head-main .search-form-field {
+
+    position: relative;
+
+    width: 100%;
+
+    margin: 0 !important;
+
+}
+
+
+
+/* CAMPO DE PESQUISA */
+
+.js-head-main .js-search-input.form-control.search-input.input_class {
+
+    display: block;
+
+    width: 100% !important;
+
+    height: 56px !important;
+
+    padding: 0 58px 0 24px !important;
+
+
+
+    background-color: var(--kitsune-surface) !important;
+
+    color: var(--kitsune-white) !important;
+
+
+
+    border: 1px solid #383838 !important;
+
+    border-radius: 32px !important;
+
+
+
+    font-size: 16px !important;
+
+    box-shadow: none !important;
+
+    outline: none;
+
+
+
+    transition: border-color .25s, box-shadow .25s;
+
+}
+
+
+
+.js-head-main .js-search-input::placeholder {
+
+    color: #aaaaaa !important;
+
+    opacity: 1;
+
+}
+
+
+
+.js-head-main .js-search-input:focus {
+
+    border-color: var(--kitsune-orange) !important;
+
+    box-shadow: 0 0 0 3px rgba(255, 129, 25, .13) !important;
+
+}
+
+
+
+/* BOTÃO DA LUPA */
+
+.js-head-main .search-submit-btn {
+
+    position: absolute !important;
+
+    top: 50%;
+
+    right: 10px;
+
+    transform: translateY(-50%);
+
+
+
+    display: flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+
+    width: 38px;
+
+    height: 38px;
+
+    padding: 0 !important;
+
+
+
+    background: transparent !important;
+
+    color: var(--kitsune-white) !important;
+
+    border: none !important;
+
+    cursor: pointer;
+
+}
+
+
+
+.js-head-main .search-submit-btn:hover {
+
+    color: var(--kitsune-orange) !important;
+
+}
+
+
+
+/* PERFIL E CARRINHO */
+
+.js-head-main .header-account,
+
+.js-head-main .header-cart {
+
+    flex: 0 0 auto;
+
+}
+
+
+
+.js-head-main .header-icon,
+
+.js-head-main .utility-icon,
+
+.js-head-main .utility-text,
+
+.js-head-main .header-account-label {
+
+    color: var(--kitsune-white) !important;
+
+    transition: color .2s ease;
+
+}
+
+
+
+.js-head-main .header-icon:hover,
+
+.js-head-main .utility-text:hover {
+
+    color: var(--kitsune-orange) !important;
+
+}
+
+
+
+/* CONTADOR DO CARRINHO */
+
+.js-head-main .header-cart .badge {
+
+    background-color: var(--kitsune-orange) !important;
+
+    color: #000000 !important;
+
+}
+
+
+
+/* ==================================================
+
+   MENU DE CATEGORIAS
+
+   ================================================== */
+
+
+
+.js-head-main .nav-desktop-container {
+
+    display: block !important;
+
+    width: 100%;
+
+    padding: 10px 20px 16px !important;
+
+    background-color: var(--kitsune-black) !important;
+
+}
+
+
+
+.js-head-main .nav-desktop-grid {
+
+    display: flex !important;
+
+    justify-content: center !important;
+
+    width: 100% !important;
+
+    padding-left: 0 !important;
+
+    padding-right: 0 !important;
+
+}
+
+
+
+.js-head-main .nav-desktop-grid-main {
+
+    width: auto !important;
+
+    max-width: 100%;
+
+}
+
+
+
+.js-head-main .nav-desktop-list {
+
+    display: flex !important;
+
+    justify-content: center !important;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+
+.js-head-main .nav-list-link {
+
+    color: var(--kitsune-white) !important;
+
+    font-size: 14px;
+
+    transition: color .2s ease;
+
+}
+
+
+
+.js-head-main .nav-list-link:hover,
+
+.js-head-main .nav-list-link-featured {
+
+    color: var(--kitsune-orange) !important;
+
+}
+
+
+
+/* ==================================================
+
+   BARRA DE AVISOS — PRESERVA O LARANJA
+
+   ================================================== */
+
+
+
+.js-navigation-bar {
+
+    background-color: #ff8119 !important;
+
+    color: #ffffff !important;
+
+}
+
+
+
+.js-navigation-bar .navigation-bar-item {
+
+    color: #ffffff !important;
+
+}
+
+
+
+/* ==================================================
+
+   TABLETS
+
+   ================================================== */
+
+
+
+@media (min-width: 768px) and (max-width: 1100px) {
+
+    .js-head-main .head-row {
+
+        gap: 20px;
+
+        padding-left: 3% !important;
+
+        padding-right: 3% !important;
+
+    }
+
+
+
+    .js-head-main .logo-img {
+
+        max-height: 75px;
+
+        max-width: 220px;
+
+    }
+
+
+
+    .js-head-main .utilities-group {
+
+        gap: 14px;
+
+    }
+
+
+
+    .js-head-main .search-container {
+
+        min-width: 150px;
+
+    }
+
+
+
+    .js-head-main .js-search-input.form-control.search-input.input_class {
+
+        height: 48px !important;
+
+    }
+
+}
+
+
+
+/* ==================================================
+
+   CELULAR
+
+   ================================================== */
+
+
+
+@media (max-width: 767px) {
+
+    .js-head-main {
+
+        padding-top: 0;
+
+    }
+
+
+
+    .js-head-main .head-row {
+
+        display: flex !important;
+
+        flex-direction: row !important;
+
+        flex-wrap: wrap !important;
+
+        justify-content: center !important;
+
+        gap: 12px;
+
+        padding: 12px 14px !important;
+
+    }
+
+
+
+    /* LOGO CENTRALIZADA NO CELULAR */
+
+    .js-head-main .logo-container {
+
+        display: flex !important;
+
+        flex: 0 0 100% !important;
+
+        justify-content: center !important;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+
+    }
+
+
+
+    .js-head-main .logo-img {
+
+        max-width: 190px;
+
+        max-height: 65px;
+
+    }
+
+
+
+    /* BUSCA, PERFIL E CARRINHO JUNTOS */
+
+    .js-head-main .utilities-group {
+
+        display: flex !important;
+
+        flex: 0 1 100% !important;
+
+        justify-content: center !important;
+
+        flex-wrap: nowrap !important;
+
+        gap: 10px;
+
+        width: 100% !important;
+
+    }
+
+
+
+    .js-head-main .search-container {
+
+        flex: 1 1 auto !important;
+
+        width: auto !important;
+
+        max-width: none;
+
+        min-width: 0;
+
+    }
+
+
+
+    .js-head-main .js-search-input.form-control.search-input.input_class {
+
+        height: 44px !important;
+
+        padding: 0 42px 0 14px !important;
+
+        font-size: 13px !important;
+
+    }
+
+
+
+    .js-head-main .search-submit-btn {
+
+        right: 4px;
+
+        width: 32px;
+
+        height: 32px;
+
+    }
+
+
+
+    .js-head-main .header-account-label,
+
+    .js-head-main .header-cart-text {
+
+        display: none !important;
+
+    }
+
+
+
+    /* MENU MOBILE ORIGINAL DO TEMA */
+
+    .js-head-main .menu-container {
+
+        display: flex !important;
+
+    }
+
+
+
+    .js-head-main .nav-desktop-container {
+
+        display: none !important;
+
+    }
+
+}
+
+
+
+/* ==========================================
+
+   KITSUNE — MANTER TAMANHO DA LOGO NO STICKY
+
+   ========================================== */
+
+
+
+.js-header .sticky-header-wrapper .logo-img,
+
+.js-header .sticky-header-wrapper .logo-default .logo-img {
+
+    height: auto !important;
+    max-height: 100px !important;
+    width: auto !important;
+    max-width: none !important;
+    transform: none !important;
+
+}
+
+
+
+/* Mantém a altura do container da logo */
+
+.js-header .sticky-header-wrapper .logo-container,
+.js-header .sticky-header-wrapper #logo {
+    height: auto !important;
+    min-height: 0 !important;
+
+}
+
+
+
+/* Desktop */
+
+@media screen and (min-width: 768px) {
+
+    .js-header .sticky-header-wrapper .logo-img {
+        max-height: 100px !important;
+    }
+
+}
+
+/* Celular */
+
+@media screen and (max-width: 767px) {
+    .js-header .sticky-header-wrapper .logo-img {
+        max-height: 65px !important;
+    }
+}
+
+/* ==========================================
+
+   KITSUNE — STICKY SÓ COM CATEGORIAS NO DESKTOP
+
+   ========================================== */
+
+@media screen and (min-width: 768px) {
+
+    /* Transição suave ao rolar */
+    .js-header .sticky-header-wrapper {
+        transition: none;
+    }
+
+    /* Quando o tema ativa o cabeçalho fixo,
+       esconde a linha da logo, busca e ícones */
+    .js-header .sticky-header-wrapper .js-head-main.is-sticky .head-row,
+    .js-header .sticky-header-wrapper .js-head-main.sticky .head-row {
+        display: none !important;
+    }
+
+    /* Mantém a navegação de categorias visível */
+    .js-header .sticky-header-wrapper .js-head-main.is-sticky .nav-desktop-container,
+    .js-header .sticky-header-wrapper .js-head-main.sticky .nav-desktop-container {
+        display: block !important;
+    }
+
+    /* Preserva as cores do menu */
+    .js-header .sticky-header-wrapper .js-head-main .nav-desktop-container {
+        background-color: #080808 !important;
+    }
+}
